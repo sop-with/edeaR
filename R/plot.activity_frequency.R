@@ -19,7 +19,7 @@ plot_activity_frequency <- function(x, ...) {
 		x %>%
 			ggplot(aes_string(glue("reorder(trace, absolute)"), "absolute")) +
 			geom_col(aes(fill = absolute)) +
-			scale_fill_continuous_tableau(name = "Activity Frequency", palette = "Blue")+
+			scale_fill_continuous_tableau(name = "Activity Frequency", palette = "Orange")+
 			theme_light() +
 			scale_x_discrete(breaks = NULL) +
 			labs(x = "Traces", y = "Absolute Activity Frequency") +
@@ -30,7 +30,7 @@ plot_activity_frequency <- function(x, ...) {
 		x %>%
 			ggplot(aes_string(glue("reorder({mapping$case_id}, absolute)"), "absolute")) +
 			geom_col(aes(fill = absolute)) +
-			scale_fill_continuous_tableau(name = "Activity Frequency", palette = "Blue")+
+			scale_fill_continuous_tableau(name = "Activity Frequency", palette = "Orange")+
 					theme_light() +
 			scale_x_discrete(breaks = NULL) +
 			coord_flip() +
@@ -41,7 +41,7 @@ plot_activity_frequency <- function(x, ...) {
 		x %>%
 			ggplot(aes_string(glue("reorder({mapping$activity_id}, absolute)"), "absolute")) +
 			geom_col(aes(fill = absolute)) +
-			scale_fill_continuous_tableau(name = "Activity Frequency", palette = "Blue")+
+			scale_fill_continuous_tableau(name = "Activity Frequency", palette = "Orange")+
 			theme_light() +
 			coord_flip() +
 			labs(x = "Activities", y = "Absolute Activity Frequency") -> p
