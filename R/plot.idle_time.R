@@ -20,7 +20,7 @@ plot_idle_time <- function(x, ...) {
 		x %>%
 			ggplot(aes_string(glue("reorder({mapping$case_id}, idle_time)"), "idle_time")) +
 			geom_col(aes(fill = idle_time)) +
-			scale_fill_continuous_tableau(name = glue("Idle time per case (in {units})"), palette = "Blue") +
+			scale_fill_continuous_tableau(name = glue("Idle time per case (in {units})"), palette = "Orange") +
 			theme_light() +
 			scale_y_continuous() +
 			theme(axis.text.x = element_blank(), axis.ticks.x = element_blank()) +
@@ -33,7 +33,7 @@ plot_idle_time <- function(x, ...) {
 		x %>%
 			ggplot(aes_string(glue("reorder({mapping$resource_id}, idle_time)"), "idle_time")) +
 			geom_col(aes(fill = idle_time)) +
-			scale_fill_continuous_tableau(name = glue("Idle time (in {units})"), palette = "Blue") +
+			scale_fill_continuous_tableau(name = glue("Idle time (in {units})"), palette = "Orange") +
 			scale_y_continuous() +
 			coord_flip() +
 			theme_light() +
