@@ -21,7 +21,7 @@ plot_resource_frequency <- function(x, ...) {
 		x %>%
 			ggplot(aes_string(glue("reorder({mapping$case_id}, nr_of_resources)"), "nr_of_resources")) +
 			geom_col(aes(fill = nr_of_resources)) +
-			scale_fill_continuous_tableau(name = "Resource frequency", palette = "Blue") +
+			scale_fill_continuous_tableau(name = "Resource frequency", palette = "Orange") +
 			coord_flip() +
 			theme_light() +
 			scale_x_discrete(breaks = NULL) +
@@ -32,7 +32,7 @@ plot_resource_frequency <- function(x, ...) {
 		x %>%
 			ggplot(aes_string(glue("reorder({mapping$activity_id}, nr_of_resources)"), "nr_of_resources")) +
 			geom_col(aes(fill = nr_of_resources)) +
-			scale_fill_continuous_tableau(name = "Resource frequency", palette = "Blue") +
+			scale_fill_continuous_tableau(name = "Resource frequency", palette = "Orange") +
 			coord_flip() +
 			theme_light() +
 			labs(x = "Activities",y = "Resource frequency") -> p
@@ -44,14 +44,14 @@ plot_resource_frequency <- function(x, ...) {
 			geom_text(aes(label = absolute), fontface = "bold", color = "white") +
 			theme_light() +
 			theme(axis.text.x = element_text(angle = 45, hjust = 1)) +
-			scale_fill_continuous_tableau("Resource-activity Frequency", palette = "Blue") +
+			scale_fill_continuous_tableau("Resource-activity Frequency", palette = "Orange") +
 			labs(x = "Activities",y = "Resources") -> p
 	}
 	else if(level == "resource") {
 		x %>%
 			ggplot(aes_string(glue("reorder({mapping$resource_id}, absolute)"), "absolute")) +
 			geom_col(aes(fill = absolute)) +
-			scale_fill_continuous_tableau(name = "Resource frequency", palette = "Blue") +
+			scale_fill_continuous_tableau(name = "Resource frequency", palette = "Orange") +
 			coord_flip() +
 			theme_light() +
 			labs(x = "Resources",y = "Resource frequency") -> p
